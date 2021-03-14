@@ -80,3 +80,23 @@ URL variables
 HTTP methods (GET, POST)
 The global objects: Request and Response
 Requests and Responses are all JSON API format
+
+Accessing Query String (GET)
+    request.args.get(<field_name>)
+    or
+    request.args[<field_name>]
+
+Accessing Form Data (POST)
+    request.form.get(<field_name>)
+    or
+    request.form[<field_name>]
+
+-------------------------------------
+URL variables
+
+Routing Patterns
+Creating a URL variable
+Setting default data to a URL variable
+Passing a URL variable to a template
+
+@app.route("/courses/<term>")
