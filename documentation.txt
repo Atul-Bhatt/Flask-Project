@@ -100,3 +100,35 @@ Setting default data to a URL variable
 Passing a URL variable to a template
 
 @app.route("/courses/<term>")
+
+-------------------------------------
+Working with the get method
+
+Creating the enrollment form using the GET method
+Creating the enrollment template
+Creating the enrollment route (URL pattern)
+Accessing form data via the GET method
+
+-------------------------------------
+Working with the post method
+
+You have to explicitly include the post method to the list in decorator
+    @app.route("/<path>", method=["GET", "POST"])
+
+We didn't have to mention this for GET but since we have provided a list, we need to include GET too.
+
+-------------------------------------
+Sending a JSON Response
+
+The Response Object
+Creating two APIs to send JSON response
+
+Response Object
+    Class flask.Response(
+        response=None,      # most commonly used
+        status=None,
+        headers=None,
+        mimetype=None,      # most commonly used
+        content_type=None,  # most commonly used
+        direct_passthrough=False
+    )
