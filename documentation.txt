@@ -132,3 +132,15 @@ Response Object
         content_type=None,  # most commonly used
         direct_passthrough=False
     )
+
+-------------------------------------
+Working with databases
+
+Installing the MongoDB database system
+Installing the MongoEngine extension for Flask
+Setting up the database
+Connecting to the database
+Creating documents and data
+Creating the data model
+
+pip install flask-mongoengine
