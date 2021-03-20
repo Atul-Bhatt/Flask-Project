@@ -143,4 +143,24 @@ Connecting to the database
 Creating documents and data
 Creating the data model
 
+In config file:
+    MONGODB_SETTINGS = {'db' : '<database_name>'}
+
 pip install flask-mongoengine
+
+-------------------------------------
+Connecting to the database
+
+Connecting to the MongoDB via the MongoDB object
+Hooking up a use collection using a simple user model Class
+Inserting sample user document(data) to the collection
+Displaying the collection to the view
+
+A collection name is a table.
+
+--------
+Set path of mongoDB to use shell
+In CMD:
+    set path=C:\Program Files\MongoDB\Server\4.4\bin
+    mongo --version
+--------
