@@ -1,139 +1,181 @@
 # Flask Project
 
-Create a .flaskenv file and put value of FLASK_APP and FLASK_ENV
+- Create a .flaskenv file and put value of FLASK_APP and FLASK_ENV
 
-Create a virtual environment:
-python -m venv <name-of-virtual-environment>
+- Create a virtual environment:
 
-Create requirements.txt file:
+```console
+python -m venv \<name-of-virtual-environment>
+```
+
+- Create requirements.txt file:
+
+```console
 pip freeze > requirements.txt
+```
 
-Install all the dependencies in requirements.txt
+- Install all the dependencies in requirements.txt
+
+```console
 pip install -r requirements.txt
+```
 
-Every ".py" file is called a module.
+- Every ".py" file is called a module.
 
-To use the .flaskenv file install python-dotenv
+- To use the .flaskenv file install python-dotenv
+
+```console
 pip install python-dotenv
+```
 
-setting FLASK_APP in powershell
+- Setting FLASK_APP in powershell
+
+```console
 $env:FLASK_APP = "main"
+```
 
-Create application forlder
-create **init**.py file
-create templates folder for html templates
-create static folder for static content like css, js, audio, video (anything that is not generated dynamically.)
+## Folder Structure
 
-move main file's content into **init**.py and import it into main.py
-
----
-
-Running and Configuring the Development server
-
-Create a config.py file in main folder
-Create a routes.py file in application folder
+- Create application folder
+- Create init.py file
+- Create templates folder for html templates
+- Create static folder for static content like css, js, audio, video (anything that is not generated dynamically.)
+- move main file's content into init.py and import it into main.py
 
 ---
 
-Creating the Homepage
+### Running and Configuring the Development server
 
-put the html files in the templates folder
-import the render_template module from flask
+- Create a config.py file in main folder
+- Create a routes.py file in application folder
 
+---
+
+### Creating the Homepage
+
+- put the html files in the templates folder
+- import the render_template module from flask
+
+```jinja
 {% Jinja code block %}
 Example
 {% include "include/footer.html" %}
+```
 
 ---
 
-Creating navigation links and route patterns
+### Creating navigation links and route patterns
 
--> using the url_for function to resolve links
--> using the route decorator to bind functions to one or more url patterns
--> Jinja delimeters
+- using the url_for function to resolve links
+- using the route decorator to bind functions to one or more url patterns
+- Jinja delimeters
 
-Jinja:
+```jinja
 {% ... %} Statements
 {{ ... }} Expressions
 {# ... #} Comments
+```
 
 ---
 
-Working with templates
+### Working with templates
 
--> The Jinja template inheritance logic
--> Creating the base template
--> Using template inheritance to create child templates
--> Passing data to the view using props
--> Accessing data via the request and response object
+- The Jinja template inheritance logic
+- Creating the base template
+- Using template inheritance to create child templates
+- Passing data to the view using props
+- Accessing data via the request and response object
 
 if you want to render a template twice you can use this expression:
+
+```jinja
 {{ self.content() }}
+```
 
 ---
 
-Passing data to the view
+### Passing data to the view
 
-Passing data from the source to the view
-Highlighting the active menu item
-Using the for directive
-Building the course table with JSON data
+- Passing data from the source to the view
+- Highlighting the active menu item
+- Using the for directive
+- Building the course table with JSON data
 
 ---
 
-Request and Response objects
+### Request and Response objects
 
-URL variables
-HTTP methods (GET, POST)
-The global objects: Request and Response
-Requests and Responses are all JSON API format
+- URL variables
+- HTTP methods (GET, POST)
+- The global objects: Request and Response
+- Requests and Responses are all JSON API format
 
 Accessing Query String (GET)
+
+```python
 request.args.get(<field_name>)
+```
+
 or
+
+```python
 request.args[<field_name>]
+```
 
 Accessing Form Data (POST)
+
+```python
 request.form.get(<field_name>)
+```
+
 or
+
+```python
 request.form[<field_name>]
+```
 
 ---
 
-URL variables
+### URL variables
 
-Routing Patterns
-Creating a URL variable
-Setting default data to a URL variable
-Passing a URL variable to a template
+- Routing Patterns
+- Creating a URL variable
+- Setting default data to a URL variable
+- Passing a URL variable to a template
 
+```python
 @app.route("/courses/<term>")
+```
 
 ---
 
-Working with the get method
+### Working with the get method
 
-Creating the enrollment form using the GET method
-Creating the enrollment template
-Creating the enrollment route (URL pattern)
-Accessing form data via the GET method
+- Creating the enrollment form using the GET method
+- Creating the enrollment template
+- Creating the enrollment route (URL pattern)
+- Accessing form data via the GET method
 
 ---
 
-Working with the post method
+### Working with the post method
 
 You have to explicitly include the post method to the list in decorator
+
+```python
 @app.route("/<path>", method=["GET", "POST"])
+```
 
 We didn't have to mention this for GET but since we have provided a list, we need to include GET too.
 
 ---
 
-Sending a JSON Response
+### Sending a JSON Response
 
-The Response Object
-Creating two APIs to send JSON response
+- The Response Object
+- Creating two APIs to send JSON response
 
+```python
 Response Object
 Class flask.Response(
 response=None, # most commonly used
@@ -143,31 +185,39 @@ mimetype=None, # most commonly used
 content_type=None, # most commonly used
 direct_passthrough=False
 )
+```
 
 ---
 
-Working with databases
+### Working with databases
 
-Installing the MongoDB database system
-Installing the MongoEngine extension for Flask
-Setting up the database
-Connecting to the database
-Creating documents and data
-Creating the data model
+- Installing the MongoDB database system
+- Installing the MongoEngine extension for Flask
+- Setting up the database
+- Connecting to the database
+- Creating documents and data
+- Creating the data model
 
 In config file:
-MONGODB_SETTINGS = {'db' : '<database_name>'}
 
+```python
+MONGODB_SETTINGS = {'db' : '<database_name>'}
+```
+
+Install mongoengine:
+
+```console
 pip install flask-mongoengine
+```
 
 ---
 
 Connecting to the database
 
-Connecting to the MongoDB via the MongoDB object
-Hooking up a use collection using a simple user model Class
-Inserting sample user document(data) to the collection
-Displaying the collection to the view
+- Connecting to the MongoDB via the MongoDB object
+- Hooking up a use collection using a simple user model Class
+- Inserting sample user document(data) to the collection
+- Displaying the collection to the view
 
 A collection name is a table.
 
@@ -175,12 +225,22 @@ A collection name is a table.
 
 Set path of mongoDB to use shell
 In CMD:
+
+```console
 set path=C:\Program Files\MongoDB\Server\4.4\bin
 mongo --version
+```
 
 import json data into a collection:
+
+```console
 mongoimport --db UTA_Enrollment --collection user --file users.json
+```
+
 If the file has json array then use --jsonArray flag:
+
+```console
 mongoimport --jsonArray --db UTA_Enrollment --collection user --file users.json
+```
 
 ---
