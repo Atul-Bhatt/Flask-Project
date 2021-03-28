@@ -244,3 +244,53 @@ mongoimport --jsonArray --db UTA_Enrollment --collection user --file users.json
 ```
 
 ---
+
+### Creating the Data Models
+
+- Creating the models module
+- Creating the User model
+- Creating the Course model
+- Creating the Enrollment model
+
+```python
+class ModelName(db.Document):
+    field1 = db.IntField()
+    field2 = db.StringField()
+```
+
+---
+
+### Working with Web Forms and Flask-Security
+
+- Installing and configuring Flask-WTF and Flask-Security extensions
+- Creating the login and registration pages
+- Processing form data and updating the database
+- Creating Courses and Enrollment pages
+- Creating sessions and authentication
+
+### Flask WTF extension
+
+- Flask-WTF is an extension for WTForms library
+- WTForms is a clean way to generate HTML form fields
+- Maintain a seperation of code and presentation
+
+```html
+<form>
+  {{ form.hidden_tag() }} {{ form.username }} {{ form.email }} {{ form.password
+  }}
+</form>
+```
+
+### Flask-Security Extension
+
+- Provides common security and authentication features:
+  - Session based authentication
+  - Password hashing
+  - Basic HTTP and token based authentication
+  - User registration
+  - Login tracking (Flask-Login)
+- Supports data persistency for Flask-SQLAlchemy, Flask-MongoEngine, flask-peewee, and PonyORM
+
+```console
+pip install flask-wtf flask-security
+```
