@@ -294,3 +294,18 @@ class ModelName(db.Document):
 ```console
 pip install flask-wtf flask-security
 ```
+
+Validate Form:
+
+```python
+form = LoginForm() # class that inherits from FlaskForm
+if form.validate_on_submit():
+  flash("You are successfully loged in!")
+  return redirect("/index")
+```
+
+---
+
+### Flashing Messages
+
+- Flash messages from the source to the view
