@@ -309,3 +309,46 @@ if form.validate_on_submit():
 ### Flashing Messages
 
 - Flash messages from the source to the view
+
+---
+
+# Database
+
+## Sort data in mongo
+
+```python
+courses = Course.objects.order_by("courseID")
+# In ascending order
+courses = Course.objects.order_by("+courseID")
+# In descending order
+courses = Course.objects.order_by("-courseID")
+```
+
+---
+
+## MongoDB Aggregation Pipeline
+
+- Exploring the MongoDB Aggregation framework using Compass interface
+- Creating the aggregation pipeline to process data in three stages:
+  - $lookup: Performs a left outer join
+  - $match: Filters documents
+  - $unwind: Deconstructs an array field
+
+--
+
+## Create sessions and authentication
+
+- State management and user authentication using Flask-Session
+- The session object stores information specific to a user
+- Implementation on top of cookies and signs cookies cryptographically
+
+## Flask-Login Extension (Not implemented here)
+
+- Sessions and State management using Flask-Login extension
+- Managing user logged in state using a user_loader() function
+- Using a LoginManager class to manage login state
+- Implementing the remember me feature
+- Restricting access to protected pages using @login_required
+- Logging out user using the logout_user() function
+
+for more information go to this [link](https:flask-login.readthedocs.io/en/latest/)
