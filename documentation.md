@@ -352,3 +352,21 @@ courses = Course.objects.order_by("-courseID")
 - Logging out user using the logout_user() function
 
 for more information go to this [link](https:flask-login.readthedocs.io/en/latest/)
+
+---
+
+## Rest API
+
+### Flask-RESTPlus Extension
+
+- Flask extension that adds support for creating REST APIs
+- Very minimal setup
+- Decorate classes and methods
+
+### Postman
+
+- API development environment for testing APIs
+- Chrome's HTTP client
+- Most used REST client worldwide
+- Automate testing with collection runner
+- API Monitoring
